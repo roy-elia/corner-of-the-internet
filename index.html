@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="guide.css">
+  <link rel="stylesheet" href="guide.css?v=3">
 </head>
 <body>
   <a class="skip" href="#template">Skip to the steps</a>
@@ -20,7 +20,7 @@
       <div class="window-body">
         <p class="kicker">CSUS developer track, Build Your Corner of the Internet</p>
         <h1><mark>Build and publish your website</mark></h1>
-        <p class="lede">The slides covered the ideas. This page has the steps, in the same order: choose a stack, start from a template, deploy it for free, add a custom domain, then level it up. Go at your own pace.</p>
+        <p class="lede">The slides covered the ideas. This page has the steps, in the same order: get inspired, choose a stack, start from a template, deploy it for free, add a custom domain, then level it up. Go at your own pace.</p>
         <ul class="pills">
           <li><a href="#template">Start building</a></li>
           <li><a href="https://github.com/roy-elia/portfolio-starter">Starter repo</a></li>
@@ -33,12 +33,37 @@
 
   <main class="page">
 
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">On this page</h2>
+      <ol>
+        <li><a href="#before">Before you start</a></li>
+        <li><a href="#inspiration">Get inspired</a></li>
+        <li><a href="#stack">1. Choose a stack</a></li>
+        <li><a href="#template">2. Start from a template</a></li>
+        <li><a href="#deploy">3. Deploy it for free</a></li>
+        <li><a href="#domain">4. Add a custom domain</a></li>
+        <li><a href="#level">5. Level up your website</a></li>
+        <li><a href="#help-title">Need help or stuck?</a></li>
+      </ol>
+    </nav>
+
     <section class="before" aria-labelledby="before">
       <h2 id="before">Before you start</h2>
       <ul class="checks">
         <li><strong>A GitHub account.</strong> Sign up at <a href="https://github.com/signup">github.com/signup</a>. Your username becomes your web address (<code>username.github.io</code>), so pick one you'd put on a résumé.</li>
-        <li><strong>Apply for the GitHub Student Developer Pack now.</strong> It includes a free domain and GitHub Pro, but approval can take a few days. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</li>
+        <li><strong>Apply for the GitHub Student Developer Pack now.</strong> It includes a domain that's free for one year and GitHub Pro, but approval can take a few days. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</li>
         <li><strong>A laptop.</strong> A phone works for reading this page, but editing is much easier on a laptop.</li>
+      </ul>
+    </section>
+
+    <section id="inspiration" aria-labelledby="inspiration-title">
+      <h2 id="inspiration-title">Get inspired</h2>
+      <p>The four sites from the slides. Open them and note what you like: the layout, the tone, the small details. Then build your own version of it, not a copy.</p>
+      <ul class="templates">
+        <li><a href="https://brittanychiang.com">Brittany Chiang</a> <span><b>Next.js</b> one-page portfolio with a sticky sidebar</span></li>
+        <li><a href="https://rauno.me">Rauno Freiberg</a> <span><b>Next.js</b> bold type and small interactive details</span></li>
+        <li><a href="https://jvns.ca">Julia Evans</a> <span><b>Hugo</b> a blog that's all writing</span></li>
+        <li><a href="https://cassidoo.co">Cassidy Williams</a> <span><b>Astro</b> personality, posts and a newsletter</span></li>
       </ul>
     </section>
 
@@ -57,7 +82,7 @@
 
     <section id="template" aria-labelledby="template-title">
       <h2 id="template-title">2. Start from a template</h2>
-      <p>A template is a finished site that you copy and fill with your own content. These steps use a plain HTML starter made for this workshop. The same buttons work for every template listed at the end of this section.</p>
+      <p>A template is a finished site that you copy and fill with your own content. These steps use a plain HTML starter made for this workshop. The same buttons work for every template listed at the end of this section. On a phone, tap any screenshot to see it full size.</p>
 
       <ol class="steps">
         <li class="step">
@@ -144,12 +169,13 @@
 
     <section id="domain" aria-labelledby="domain-title">
       <h2 id="domain-title">4. Add a custom domain</h2>
-      <p>A domain is the address people type, like <code>yourname.me</code>. Without one, your site lives at <code>username.github.io</code>. With the Student Developer Pack you can claim one free for a year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
+      <p>A domain is the address people type, like <code>yourname.me</code>. Without one, your site lives at <code>username.github.io</code>. With the Student Developer Pack you can claim one free for your first year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
       <ul>
         <li><strong>Namecheap</strong>: a free <code>.me</code> domain for one year.</li>
         <li><strong>.TECH</strong>: one <code>.tech</code> domain free for one year.</li>
-        <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>.</li>
+        <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>, for one year.</li>
       </ul>
+      <p class="callout"><strong>Free for the first year only.</strong> After a year you pay the registrar to renew it, and renewal prices differ a lot between endings, so check the renewal price before you pick one. If you don't renew, the domain expires and your site goes back to <code>username.github.io</code>.</p>
       <p>Once your pack is approved, open the offer on the pack page and claim your domain on the partner's site. Then point it at your site:</p>
       <ol class="sub">
         <li>In your repo: <strong>Settings → Pages → Custom domain</strong>, type your domain, and click <strong>Save</strong>. Do this before touching DNS.</li>
@@ -192,8 +218,13 @@
     </section>
 
     <section class="help" aria-labelledby="help-title">
-      <h2 id="help-title">Stuck?</h2>
-      <p>Ask in the <a href="https://discord.gg/hfzjN7n3jP">CSUS Discord</a>, drop by the CSUS Helpdesk in Trottier 3090 (weekdays 11–5 during term), or find us on Instagram at <a href="https://instagram.com/mcgillcsus">@mcgillcsus</a>.</p>
+      <h2 id="help-title">Need help or stuck?</h2>
+      <p><strong>Tonight:</strong> raise your hand and a mentor will come over.</p>
+      <p><strong>After tonight:</strong> join the CSUS Discord and ask your question there. You can also drop by the CSUS Helpdesk in Trottier 3090 (weekdays 11–5 during term).</p>
+      <ul class="help-links">
+        <li><a href="https://discord.gg/hfzjN7n3jP">Join the CSUS Discord</a></li>
+        <li><a href="https://instagram.com/mcgillcsus">CSUS on Instagram</a></li>
+      </ul>
     </section>
   </main>
 
