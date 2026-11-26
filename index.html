@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="guide.css?v=3">
+  <link rel="stylesheet" href="guide.css?v=5">
 </head>
 <body>
   <a class="skip" href="#template">Skip to the steps</a>
@@ -31,29 +31,57 @@
     </div>
   </header>
 
+  <div class="progress" role="status" aria-live="polite" hidden>
+    <div class="progress-inner">
+      <span id="progress-text">0 steps done</span>
+      <div class="bar" aria-hidden="true"><i id="progress-fill"></i></div>
+      <button type="button" id="progress-reset">Reset</button>
+    </div>
+  </div>
+
   <main class="page">
 
     <nav class="toc" aria-labelledby="toc-title">
       <h2 id="toc-title">On this page</h2>
+      <p class="toc-hint">Tick each step as you finish it. Your ticks stay on this device.</p>
       <ol>
-        <li><a href="#before">Before you start</a></li>
+        <li><a href="#before">Before you start <span class="count" data-count="start"></span></a></li>
         <li><a href="#stack">1. Choose a stack</a></li>
-        <li><a href="#template">2. Start from a template</a></li>
-        <li><a href="#deploy">3. Deploy it for free</a></li>
-        <li><a href="#domain">4. Add a custom domain</a></li>
-        <li><a href="#level">5. Level up your website</a></li>
+        <li><a href="#template">2. Start from a template <span class="count" data-count="template"></span></a></li>
+        <li><a href="#deploy">3. Deploy it for free <span class="count" data-count="deploy"></span></a></li>
+        <li><a href="#domain">4. Add a custom domain <span class="count" data-count="domain"></span></a></li>
+        <li><a href="#level">5. Level up your website <span class="count" data-count="level"></span></a></li>
         <li><a href="#inspiration">Get inspired</a></li>
         <li><a href="#help-title">Need help or stuck?</a></li>
       </ol>
     </nav>
 
-    <section class="before" aria-labelledby="before">
-      <h2 id="before">Before you start</h2>
-      <ul class="checks">
-        <li><strong>A GitHub account.</strong> Sign up at <a href="https://github.com/signup">github.com/signup</a>. Your username becomes your web address (<code>username.github.io</code>), so pick one you'd put on a résumé.</li>
-        <li><strong>Apply for the GitHub Student Developer Pack now.</strong> It includes a domain that's free for one year and GitHub Pro, but approval can take a few days. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</li>
-        <li><strong>A laptop.</strong> A phone works for reading this page, but editing is much easier on a laptop.</li>
-      </ul>
+    <section id="start" class="before" aria-labelledby="before">
+      <h2 id="before">Before you start <span class="count" data-count="start"></span></h2>
+      <p class="goal"><b>Do these first.</b> The Student Pack takes a few days to approve, so apply tonight even if you finish nothing else.</p>
+      <ol class="steps">
+        <li class="step">
+          <h3>Make a GitHub account</h3>
+          <p>Sign up at <a href="https://github.com/signup">github.com/signup</a>. Your username becomes your web address (<code>username.github.io</code>), so pick one you'd put on a résumé.</p>
+          <label class="tick"><input type="checkbox" data-step="account"><span class="off">Mark as done</span><span class="on">Done</span></label>
+        </li>
+
+        <li class="step">
+          <h3>Apply for the GitHub Student Developer Pack</h3>
+          <p>It includes a domain that's free for one year and GitHub Pro. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, click <strong>Sign up for Student Developer Pack</strong>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</p>
+          <figure>
+            <a href="img/pack-signup.png" title="Open full size"><img src="img/pack-signup.png" alt="The Student Developer Pack page with the Sign up for Student Developer Pack button highlighted" loading="lazy" width="620" height="254"></a>
+            <figcaption>The green <strong>Sign up for Student Developer Pack</strong> button. GitHub emails you when you're approved.</figcaption>
+          </figure>
+          <label class="tick"><input type="checkbox" data-step="pack"><span class="off">Mark as applied</span><span class="on">Applied</span></label>
+        </li>
+
+        <li class="step">
+          <h3>Open this page on a laptop</h3>
+          <p>A phone is fine for reading, but editing is much easier on a laptop. Scan the QR code again there, or type <code>roy-elia.github.io/corner-of-the-internet</code>.</p>
+          <label class="tick"><input type="checkbox" data-step="laptop"><span class="off">Mark as done</span><span class="on">Done</span></label>
+        </li>
+      </ol>
     </section>
 
     <section id="stack" aria-labelledby="stack-title">
@@ -71,7 +99,8 @@
     </section>
 
     <section id="template" aria-labelledby="template-title">
-      <h2 id="template-title">2. Start from a template</h2>
+      <h2 id="template-title">2. Start from a template <span class="count" data-count="template"></span></h2>
+      <p class="goal"><b>You'll end with:</b> your own copy of the starter site on GitHub.</p>
       <p>A template is a finished site that you copy and fill with your own content. These steps use a plain HTML starter made for this workshop. The same buttons work for every template listed at the end of this section. On a phone, tap any screenshot to see it full size.</p>
 
       <ol class="steps">
@@ -82,6 +111,7 @@
             <a href="img/step1-template.png" title="Open full size"><img src="img/step1-template.png" alt="The starter repo on GitHub: 1, the Use this template button; 2, Create a new repository in its menu" loading="lazy" width="800" height="300"></a>
             <figcaption>1: <strong>Use this template</strong>. 2: <strong>Create a new repository</strong>.</figcaption>
           </figure>
+          <label class="tick"><input type="checkbox" data-step="copy"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
 
         <li class="step">
@@ -91,6 +121,7 @@
             <a href="img/step2-name.png" title="Open full size"><img src="img/step2-name.png" alt="The new repository form: 1, the repository name field; 2, Public visibility; 3, the Create repository button" loading="lazy" width="800" height="450"></a>
             <figcaption>1: the name, with your own username. 2: <strong>Public</strong>. 3: <strong>Create repository</strong>. Any other name works too; your site will just live at <code>username.github.io/that-name/</code>.</figcaption>
           </figure>
+          <label class="tick"><input type="checkbox" data-step="name"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
       </ol>
 
@@ -108,7 +139,8 @@
     </section>
 
     <section id="deploy" aria-labelledby="deploy-title">
-      <h2 id="deploy-title">3. Deploy it for free</h2>
+      <h2 id="deploy-title">3. Deploy it for free <span class="count" data-count="deploy"></span></h2>
+      <p class="goal"><b>You'll end with:</b> a live link you can send to anyone.</p>
       <p>The starter is a static site: a folder of HTML, CSS and image files that the host sends to visitors as they are. There's no server for you to run, which is why hosting it costs nothing.</p>
 
       <ol class="steps">
@@ -119,6 +151,7 @@
             <a href="img/step3-pages.png" title="Open full size"><img src="img/step3-pages.png" alt="Settings, Pages: 1, Pages in the sidebar; 2, Source set to Deploy from a branch; 3, main and root; 4, Save" loading="lazy" width="800" height="285"></a>
             <figcaption>1: <strong>Pages</strong> in the sidebar. 2: <em>Deploy from a branch</em>. 3: <code>main</code> and <code>/ (root)</code>. 4: <strong>Save</strong>. If you named the repo <code>username.github.io</code>, this may already be on; check anyway.</figcaption>
           </figure>
+          <label class="tick"><input type="checkbox" data-step="pages"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
 
         <li class="step">
@@ -128,6 +161,7 @@
             <a href="img/step4-live.png" title="Open full size"><img src="img/step4-live.png" alt="Pages settings: 1, Your site is live at, with the address; 2, the Visit site button" loading="lazy" width="800" height="280"></a>
             <figcaption>1: your address. 2: <strong>Visit site</strong>. Still a 404? Give it another minute; the first deploy is the slowest.</figcaption>
           </figure>
+          <label class="tick"><input type="checkbox" data-step="live"><span class="off">Mark as done</span><span class="on">It's live</span></label>
         </li>
 
         <li class="step">
@@ -138,11 +172,13 @@
             <a href="img/step5-edit.png" title="Open full size"><img src="img/step5-edit.png" alt="GitHub's file editor: 1, a pencil comment above the title line; 2, the Commit changes button" loading="lazy" width="800" height="410"></a>
             <figcaption>1: a ✏️ comment and the line it points to. 2: <strong>Commit changes…</strong>. Want a full editor? Press <kbd>.</kbd> on your repo for github.dev, or clone it and use VS Code with <code>git add</code>, <code>git commit</code>, <code>git push</code>.</figcaption>
           </figure>
+          <label class="tick"><input type="checkbox" data-step="edit"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
 
         <li class="step">
           <h3>Add your photo</h3>
           <p>Open the <code>assets</code> folder in your repo and use <strong>Add file → Upload files</strong>. Name it <code>me.jpg</code>, then in <code>index.html</code> change <code>assets/me.svg</code> to <code>assets/me.jpg</code>. Commit.</p>
+          <label class="tick"><input type="checkbox" data-step="photo"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
       </ol>
 
@@ -158,7 +194,8 @@
 
 
     <section id="domain" aria-labelledby="domain-title">
-      <h2 id="domain-title">4. Add a custom domain</h2>
+      <h2 id="domain-title">4. Add a custom domain <span class="count" data-count="domain"></span></h2>
+      <p class="goal"><b>You'll end with:</b> your site at <code>yourname.me</code> instead of <code>username.github.io</code>. This needs an approved Student Pack, so it can wait until after tonight.</p>
       <p>A domain is the address people type, like <code>yourname.me</code>. Without one, your site lives at <code>username.github.io</code>. With the Student Developer Pack you can claim one free for your first year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
       <ul>
         <li><strong>Namecheap</strong>: a free <code>.me</code> domain for one year. It reads like a personal site.</li>
@@ -166,35 +203,68 @@
         <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>, for one year. The most choice of the three.</li>
       </ul>
       <p class="callout"><strong>Free for the first year only.</strong> After a year you pay the registrar to renew it, and renewal prices differ a lot between endings, so check the renewal price before you pick one. If you don't renew, the domain expires and your site goes back to <code>username.github.io</code>.</p>
-      <p>Once your pack is approved, open the offer on the pack page and claim your domain on the partner's site. Then point it at your site:</p>
-      <ol class="sub">
-        <li>In your repo: <strong>Settings → Pages → Custom domain</strong>, type your domain, and click <strong>Save</strong>. Do this before touching DNS.</li>
-        <li>At your registrar, add four <strong>A records</strong> for the bare domain:
+
+      <ol class="steps">
+        <li class="step">
+          <h3>Claim your free domain</h3>
+          <p>Once your pack is approved, open the <a href="https://education.github.com/pack">pack page</a>, find the Namecheap, .TECH or Name.com offer, and follow it to the partner's site. Search for the name you want and check out at $0.</p>
+          <label class="tick"><input type="checkbox" data-step="claim"><span class="off">Mark as done</span><span class="on">Done</span></label>
+        </li>
+
+        <li class="step">
+          <h3>Add it to GitHub Pages</h3>
+          <p>In your repo, open <strong>Settings → Pages</strong>. Under <strong>Custom domain</strong>, type your domain and click <strong>Save</strong>. Do this before you touch DNS.</p>
+          <figure>
+            <a href="img/domain-field.png" title="Open full size"><img src="img/domain-field.png" alt="The Custom domain section of Pages settings: 1, the domain field with yourname.me typed in; 2, the Save button" loading="lazy" width="565" height="96"></a>
+            <figcaption>1: your domain, without <code>https://</code>. 2: <strong>Save</strong>.</figcaption>
+          </figure>
+          <label class="tick"><input type="checkbox" data-step="pages-domain"><span class="off">Mark as done</span><span class="on">Done</span></label>
+        </li>
+
+        <li class="step">
+          <h3>Point your domain at GitHub</h3>
+          <p>On the registrar's site (where you claimed the domain), open the <strong>DNS</strong> settings for your domain and add five records. If it already has parking records for <code>@</code> or <code>www</code>, delete those first.</p>
+          <figure>
+            <a href="img/dns-records.png" title="Open full size"><img src="img/dns-records.png" alt="An example DNS records table: 1, four A records with host @ pointing to GitHub's addresses; 2, a CNAME record with host www pointing to your-username.github.io" loading="lazy" width="800" height="345"></a>
+            <figcaption>1: four <strong>A records</strong>, host <code>@</code>, one for each address below. 2: one <strong>CNAME</strong>, host <code>www</code>, value <code>your-username.github.io</code>. Your registrar's page will look a bit different.</figcaption>
+          </figure>
+          <p>The four addresses to copy:</p>
           <code class="block">185.199.108.153
 185.199.109.153
 185.199.110.153
 185.199.111.153</code>
+          <label class="tick"><input type="checkbox" data-step="dns"><span class="off">Mark as done</span><span class="on">Done</span></label>
         </li>
-        <li>Add a <strong>CNAME record</strong> for <code>www</code> pointing to <code>your-username.github.io</code>.</li>
-        <li>Back in Pages settings, tick <strong>Enforce HTTPS</strong> once it's available. DNS changes can take up to 24 hours.</li>
+
+        <li class="step">
+          <h3>Turn on HTTPS</h3>
+          <p>Back in <strong>Settings → Pages</strong>, tick <strong>Enforce HTTPS</strong>. DNS changes can take up to 24 hours to reach everyone, so if the box is greyed out, come back later.</p>
+          <figure>
+            <a href="img/domain-https.png" title="Open full size"><img src="img/domain-https.png" alt="The Enforce HTTPS checkbox in Pages settings" loading="lazy" width="297" height="41"></a>
+          </figure>
+          <label class="tick"><input type="checkbox" data-step="https"><span class="off">Mark as done</span><span class="on">Done</span></label>
+        </li>
       </ol>
       <p class="note">Full details: <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">GitHub's custom domain docs</a>.</p>
     </section>
 
     <section id="level" aria-labelledby="level-title">
-      <h2 id="level-title">5. Level up your website</h2>
+      <h2 id="level-title">5. Level up your website <span class="count" data-count="level"></span></h2>
       <p>Optional ideas for later, once your site is live. Each one links to the docs you'll need.</p>
 
       <h3>Add a blog</h3>
       <p>A blog gives people a reason to come back and shows how you think about your work. The easiest route is Astro's blog template: run <code>npm create astro@latest -- --template blog</code>, then write each post as a Markdown file in <code>src/content/blog/</code>. Astro turns every file into a page. To publish it on GitHub Pages, follow <a href="https://docs.astro.build/en/guides/deploy/github/">Astro's GitHub Pages guide</a>.</p>
+      <label class="tick"><input type="checkbox" data-step="blog" data-optional><span class="off">I tried this</span><span class="on">Tried it</span></label>
 
       <h3>Dark mode</h3>
       <p>Your site switches to dark colours when the visitor's phone or laptop is set to dark mode. The starter already does this: look for <code>@media (prefers-color-scheme: dark)</code> in <code>style.css</code> and change the colours inside it.</p>
+      <label class="tick"><input type="checkbox" data-step="dark" data-optional><span class="off">I tried this</span><span class="on">Tried it</span></label>
 
       <h3>Visitor counts</h3>
       <p>Find out how many people visit and where they came from, for example after you put your link on your résumé. <a href="https://www.goatcounter.com">GoatCounter</a> is free for personal sites and uses no cookies, so you don't need a cookie banner. Sign up, pick a code, and paste this line just before <code>&lt;/body&gt;</code> in <code>index.html</code>, with your code in place of <code>YOURCODE</code>:</p>
       <code class="block">&lt;script data-goatcounter="https://YOURCODE.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"&gt;&lt;/script&gt;</code>
+      <label class="tick"><input type="checkbox" data-step="counts" data-optional><span class="off">I tried this</span><span class="on">Tried it</span></label>
 
       <h3>Notion as your CMS</h3>
       <p>A CMS (content management system) is the place where you write and edit your site's content. With Notion as your CMS, you write posts in a Notion database and a script copies them onto your site, so you can update the site without touching code. This one needs some coding to set up:</p>
@@ -205,6 +275,7 @@
         <li>In an Astro or Next.js site, use the <a href="https://developers.notion.com">Notion API</a> to fetch the posts and <a href="https://github.com/souvikinator/notion-to-md">notion-to-md</a> to turn each one into Markdown when the site builds.</li>
         <li>Rebuild the site whenever you publish a post. A scheduled GitHub Action can do it for you, with the secret saved under <strong>Settings → Secrets and variables → Actions</strong>.</li>
       </ol>
+      <label class="tick"><input type="checkbox" data-step="notion" data-optional><span class="off">I tried this</span><span class="on">Tried it</span></label>
     </section>
 
     <section id="inspiration" aria-labelledby="inspiration-title">
@@ -232,5 +303,45 @@
   <footer class="footer">
     <p>Made by CSUS for Build Your Corner of the Internet, with Notion @ McGill and Douze à Deux. November 26, 2026.</p>
   </footer>
+  <script>
+    (() => {
+      const KEY = "corner-guide-ticks";
+      let saved = {};
+      try { saved = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) {}
+      const store = () => { try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} };
+      const boxes = [...document.querySelectorAll("input[data-step]")];
+      const core = boxes.filter((b) => !("optional" in b.dataset));
+      const bar = document.querySelector(".progress");
+      const text = document.getElementById("progress-text");
+      const fill = document.getElementById("progress-fill");
+
+      function update() {
+        const done = core.filter((b) => b.checked).length;
+        text.textContent = done === core.length
+          ? "All " + core.length + " steps done. Show it off at 8:30!"
+          : done + " of " + core.length + " steps done";
+        fill.style.width = (done / core.length) * 100 + "%";
+        bar.classList.toggle("complete", done === core.length);
+        document.querySelectorAll("[data-count]").forEach((el) => {
+          const inSection = boxes.filter((b) => b.closest("section").id === el.dataset.count);
+          const n = inSection.filter((b) => b.checked).length;
+          el.textContent = n + "/" + inSection.length;
+          el.classList.toggle("full", n === inSection.length);
+        });
+      }
+
+      boxes.forEach((b) => {
+        b.checked = Boolean(saved[b.dataset.step]);
+        b.addEventListener("change", () => { saved[b.dataset.step] = b.checked; store(); update(); });
+      });
+      document.getElementById("progress-reset").addEventListener("click", () => {
+        if (!confirm("Clear all your ticks on this device?")) return;
+        boxes.forEach((b) => { b.checked = false; });
+        saved = {}; store(); update();
+      });
+      bar.hidden = false;
+      update();
+    })();
+  </script>
 </body>
 </html>

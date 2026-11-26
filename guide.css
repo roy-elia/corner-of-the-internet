@@ -197,3 +197,68 @@ figcaption { margin-top: 0.6rem; line-height: 1.55; color: var(--muted); font-si
   code.block { font-size: 0.8rem; }
   figure { margin-left: -0.25rem; margin-right: -0.25rem; }
 }
+
+/* ---------- Progress and ticks ---------- */
+.progress {
+  position: sticky; top: 0; z-index: 10;
+  margin-top: 1.5rem;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--ink);
+}
+.progress[hidden] { display: none; }
+.progress-inner { max-width: 44rem; margin: 0 auto; padding: 0.35rem 1.25rem; display: flex; align-items: center; gap: 0.9rem; }
+#progress-text { font: 700 0.95rem/1.2 var(--display); white-space: nowrap; }
+.progress .bar { flex: 1; height: 14px; background: var(--window); border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; }
+.progress .bar i { display: block; height: 100%; width: 0; background: var(--highlight); transition: width 0.3s ease; }
+@media (prefers-reduced-motion: reduce) { .progress .bar i { transition: none; } }
+.progress.complete .bar i { background: repeating-linear-gradient(-45deg, var(--highlight) 0 8px, #f5d000 8px 16px); }
+#progress-reset { min-height: 44px; padding: 0 0.25rem; background: none; border: 0; color: var(--muted); font: 600 0.85rem/1 var(--display); text-decoration: underline; text-underline-offset: 0.2em; cursor: pointer; }
+.page { padding-top: 2.5rem; }
+
+.toc-hint { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.95rem; }
+.toc a { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+
+.count {
+  display: inline-block; vertical-align: 0.2em; margin-left: 0.4rem;
+  padding: 0.2rem 0.55rem; border: 2px solid var(--line); border-radius: 999px;
+  color: var(--muted); font: 700 0.8rem/1 var(--display); letter-spacing: 0.02em;
+}
+.count:empty { display: none; }
+.count.full { background: var(--highlight); border-color: var(--ink); color: #1b2130; }
+
+.goal { padding: 0.75rem 1rem; border: 2px dashed var(--ink); border-radius: 10px; font-size: 1rem; }
+.goal b { font-family: var(--display); }
+
+.tick {
+  display: inline-flex; align-items: center; gap: 0.65rem;
+  margin-top: 1.1rem; padding: 0.5rem 1.05rem 0.5rem 0.65rem; min-height: 44px;
+  background: var(--window); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 999px; box-shadow: 3px 3px 0 var(--ink);
+  font: 700 1rem/1 var(--display); cursor: pointer; user-select: none; -webkit-user-select: none;
+}
+.tick:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.tick input {
+  appearance: none; -webkit-appearance: none; flex: none;
+  width: 1.4rem; height: 1.4rem; margin: 0;
+  background: var(--window); border: 2px solid var(--ink); border-radius: 6px;
+  display: grid; place-items: center; cursor: pointer;
+}
+.tick input:checked { background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M4 10.5l4 4L16 6' fill='none' stroke='%231b2130' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 85% no-repeat; }
+.tick .on { display: none; }
+.tick:has(input:checked) { background: var(--highlight); color: #1b2130; }
+.tick:has(input:checked) input { border-color: #1b2130; }
+.tick:has(input:checked) .on { display: inline; }
+.tick:has(input:checked) .off { display: none; }
+.tick:has(input:focus-visible) { outline: 2px solid var(--link); outline-offset: 3px; }
+.tick input:focus-visible { outline: none; }
+.step:has(.tick input:checked)::before { content: "\2713"; font-size: 1.1rem; }
+.step:has(.tick input:checked) { border-left-color: var(--ink); }
+.step:last-child:has(.tick input:checked) { border-left-color: transparent; }
+#level .tick { margin: 0.2rem 0 0.5rem; }
+
+@media (max-width: 34rem) {
+  .progress-inner { gap: 0.6rem; padding: 0.3rem 1rem; }
+  #progress-text { font-size: 0.88rem; }
+  .count { font-size: 0.75rem; }
+}
