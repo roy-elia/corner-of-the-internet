@@ -59,12 +59,13 @@
     <section id="stack" aria-labelledby="stack-title">
       <h2 id="stack-title">1. Choose a stack</h2>
       <p>Your stack is the set of tools that turns your files into a website. If this is your first site, use plain HTML and CSS: the rest of this guide does. Come back to this table when you want more.</p>
+      <p>The first three make <strong>static sites</strong>: just files. Every visitor gets the same pages and nothing runs on a server, which is why hosting them is free. The last two are <strong>JavaScript frameworks</strong>: code runs in the visitor's browser, so the page can change as people click and type.</p>
       <dl class="table">
-        <div><dt>Plain HTML/CSS</dt><dd>For a first site or a single page. Nothing to install, and you can read every line. <em>Start:</em> copy the starter in step 2.</dd></div>
-        <div><dt><a href="https://astro.build">Astro</a></dt><dd>For a portfolio or blog with several pages. You write pages in Markdown and the site stays fast. <em>Start:</em> <code>npm create astro@latest</code></dd></div>
-        <div><dt><a href="https://nextjs.org">Next.js</a></dt><dd>When you need logins, forms or a database. React plus a server in one project. More than a portfolio needs. <em>Start:</em> <code>npx create-next-app@latest</code></dd></div>
-        <div><dt><a href="https://vite.dev">React + Vite</a></dt><dd>For an interactive site when you already know React. <em>Start:</em> <code>npm create vite@latest</code></dd></div>
-        <div><dt><a href="https://gohugo.io">Hugo</a> / <a href="https://jekyllrb.com">Jekyll</a></dt><dd>For a blog that's mostly writing. GitHub Pages builds Jekyll sites for you; Hugo builds very quickly. <em>Start:</em> fork a theme from step 2.</dd></div>
+        <div><dt>HTML + CSS</dt><dd>The two languages every web page is written in. You write them by hand and can read every line. <em>Use it for:</em> your first site. <em>Start:</em> copy the starter in step 2.</dd></div>
+        <div><dt><a href="https://gohugo.io">Hugo</a> / <a href="https://jekyllrb.com">Jekyll</a></dt><dd>You write posts as Markdown files and they turn them into HTML pages. GitHub Pages builds Jekyll sites for you. <em>Use it for:</em> a blog. <em>Start:</em> fork a theme from step 2.</dd></div>
+        <div><dt><a href="https://astro.build">Astro</a></dt><dd>Like Hugo, but you can add JavaScript to the parts of a page that move. <em>Use it for:</em> a portfolio with a blog. <em>Start:</em> <code>npm create astro@latest</code></dd></div>
+        <div><dt><a href="https://vite.dev">React + Vite</a></dt><dd>React builds the page out of reusable pieces called components. Vite runs it on your laptop while you code and bundles it when you publish. <em>Use it for:</em> interactive pages, like a game or a tool. <em>Start:</em> <code>npm create vite@latest</code></dd></div>
+        <div><dt><a href="https://nextjs.org">Next.js</a></dt><dd>React plus a server in one project, so you can have logins and a database. More than a portfolio needs. <em>Use it for:</em> a web app. <em>Start:</em> <code>npx create-next-app@latest</code></dd></div>
       </dl>
       <p class="note">The Astro, Next.js and Vite commands need <a href="https://nodejs.org">Node.js</a> installed on your laptop. Plain HTML doesn't need anything.</p>
     </section>
@@ -148,7 +149,7 @@
       <p class="done">That's it: you have a real website. Raise your hand if anything got stuck, and sign up for the demo showcase at 8:30 if you want to show it off.</p>
 
       <h3>Prefer Vercel or Netlify?</h3>
-      <p>Both are free for personal sites and deploy straight from your GitHub repo. Every push to <code>main</code> updates the site.</p>
+      <p>All three hosts are free for a personal site. The difference is how your files get there. Use <strong>GitHub Pages</strong> when your site is plain files and the code is already on GitHub, like the starter. Use <strong>Vercel</strong> if you built it with Next.js: Vercel makes Next.js, and every branch gets its own preview link. Use <strong>Netlify</strong> if you'd rather skip Git and drag a folder onto a web page. Vercel and Netlify can also deploy from your GitHub repo, and every push to <code>main</code> updates the site.</p>
       <dl class="table">
         <div><dt><a href="https://vercel.com">Vercel</a></dt><dd>Sign up with GitHub, click <strong>Add New → Project</strong>, import your repo, and click <strong>Deploy</strong>. Your site lives at <code>project-name.vercel.app</code>. The best fit for Next.js, and each branch gets its own preview link. Personal, non-commercial use only on the free plan.</dd></div>
         <div><dt><a href="https://www.netlify.com">Netlify</a></dt><dd>Sign up with GitHub, choose <strong>Add new project → Import an existing project</strong>, pick your repo, and deploy. Your site lives at <code>name.netlify.app</code>. No repo? Drag a folder onto <a href="https://app.netlify.com/drop">app.netlify.com/drop</a>. The free plan's monthly credits cover roughly 20 deploys.</dd></div>
@@ -160,9 +161,9 @@
       <h2 id="domain-title">4. Add a custom domain</h2>
       <p>A domain is the address people type, like <code>yourname.me</code>. Without one, your site lives at <code>username.github.io</code>. With the Student Developer Pack you can claim one free for your first year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
       <ul>
-        <li><strong>Namecheap</strong>: a free <code>.me</code> domain for one year.</li>
-        <li><strong>.TECH</strong>: one <code>.tech</code> domain free for one year.</li>
-        <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>, for one year.</li>
+        <li><strong>Namecheap</strong>: a free <code>.me</code> domain for one year. It reads like a personal site.</li>
+        <li><strong>.TECH</strong>: one <code>.tech</code> domain free for one year. It says you build things.</li>
+        <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>, for one year. The most choice of the three.</li>
       </ul>
       <p class="callout"><strong>Free for the first year only.</strong> After a year you pay the registrar to renew it, and renewal prices differ a lot between endings, so check the renewal price before you pick one. If you don't renew, the domain expires and your site goes back to <code>username.github.io</code>.</p>
       <p>Once your pack is approved, open the offer on the pack page and claim your domain on the partner's site. Then point it at your site:</p>
@@ -210,10 +211,10 @@
       <h2 id="inspiration-title">Get inspired</h2>
       <p>The four sites from the last slide. Open them and note what you like: the layout, the tone, the small details. Then build your own version of it, not a copy.</p>
       <ul class="templates">
-        <li><a href="https://brittanychiang.com">Brittany Chiang</a> <span><b>Next.js</b> one-page portfolio with a sticky sidebar</span></li>
-        <li><a href="https://rauno.me">Rauno Freiberg</a> <span><b>Next.js</b> bold type and small interactive details</span></li>
-        <li><a href="https://jvns.ca">Julia Evans</a> <span><b>Hugo</b> a blog that's all writing</span></li>
-        <li><a href="https://cassidoo.co">Cassidy Williams</a> <span><b>Astro</b> personality, posts and a newsletter</span></li>
+        <li><a href="https://tholman.com">Tim Holman</a> <span><b>HTML + CSS</b> hundreds of his projects drift across the page, no framework</span></li>
+        <li><a href="https://www.jhey.dev">Jhey Tompkins</a> <span><b>Astro</b> small, playful details everywhere</span></li>
+        <li><a href="https://hamishw.com">Hamish Williams</a> <span><b>React</b> a 3D hero and smooth page transitions</span></li>
+        <li><a href="https://brittanychiang.com">Brittany Chiang</a> <span><b>Next.js</b> a clean one-page portfolio with a sticky sidebar</span></li>
       </ul>
     </section>
 
