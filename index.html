@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Put your site online tonight: developer track guide</title>
-  <meta name="description" content="Follow-along guide for the CSUS developer track at Build Your Corner of the Internet: copy a starter site, publish it free on GitHub Pages, and get a custom domain.">
+  <title>Build and publish your website: developer track guide</title>
+  <meta name="description" content="Step-by-step guide for the CSUS developer track at Build Your Corner of the Internet: choose a stack, start from a template, deploy for free, add a custom domain, and level up your site.">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,19 +12,20 @@
   <link rel="stylesheet" href="guide.css">
 </head>
 <body>
-  <a class="skip" href="#steps">Skip to the steps</a>
+  <a class="skip" href="#template">Skip to the steps</a>
 
   <header class="hero">
     <div class="window">
       <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span><p>developer-track.html</p></div>
       <div class="window-body">
         <p class="kicker">CSUS developer track, Build Your Corner of the Internet</p>
-        <h1><mark>Put your site online tonight</mark></h1>
-        <p class="lede">Copy a ready-made one-page site, publish it for free on GitHub Pages, then make it yours. No installs. About 10 minutes to a live link.</p>
+        <h1><mark>Build and publish your website</mark></h1>
+        <p class="lede">The slides covered the ideas. This page has the steps, in the same order: choose a stack, start from a template, deploy it for free, add a custom domain, then level it up. Go at your own pace.</p>
         <ul class="pills">
+          <li><a href="#template">Start building</a></li>
           <li><a href="https://github.com/roy-elia/portfolio-starter">Starter repo</a></li>
           <li><a href="https://roy-elia.github.io/portfolio-starter/">See the starter live</a></li>
-          <li><a href="#domain">Get yourname.com</a></li>
+          <li><a href="#domain">Custom domain</a></li>
         </ul>
       </div>
     </div>
@@ -36,13 +37,27 @@
       <h2 id="before">Before you start</h2>
       <ul class="checks">
         <li><strong>A GitHub account.</strong> Sign up at <a href="https://github.com/signup">github.com/signup</a>. Your username becomes your web address (<code>username.github.io</code>), so pick one you'd put on a résumé.</li>
-        <li><strong>Apply for the GitHub Student Developer Pack tonight.</strong> It includes a free domain and GitHub Pro, but approval can take a few days. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</li>
+        <li><strong>Apply for the GitHub Student Developer Pack now.</strong> It includes a free domain and GitHub Pro, but approval can take a few days. Go to <a href="https://education.github.com/pack">education.github.com/pack</a>, add your <code>@mail.mcgill.ca</code> address, and upload proof of enrolment (a student ID or a Minerva schedule screenshot).</li>
         <li><strong>A laptop.</strong> A phone works for reading this page, but editing is much easier on a laptop.</li>
       </ul>
     </section>
 
-    <section id="steps" aria-labelledby="steps-title">
-      <h2 id="steps-title">The steps</h2>
+    <section id="stack" aria-labelledby="stack-title">
+      <h2 id="stack-title">1. Choose a stack</h2>
+      <p>Your stack is the set of tools that turns your files into a website. If this is your first site, use plain HTML and CSS: the rest of this guide does. Come back to this table when you want more.</p>
+      <dl class="table">
+        <div><dt>Plain HTML/CSS</dt><dd>For a first site or a single page. Nothing to install, and you can read every line. <em>Start:</em> copy the starter in step 2.</dd></div>
+        <div><dt><a href="https://astro.build">Astro</a></dt><dd>For a portfolio or blog with several pages. You write pages in Markdown and the site stays fast. <em>Start:</em> <code>npm create astro@latest</code></dd></div>
+        <div><dt><a href="https://nextjs.org">Next.js</a></dt><dd>When you need logins, forms or a database. React plus a server in one project. More than a portfolio needs. <em>Start:</em> <code>npx create-next-app@latest</code></dd></div>
+        <div><dt><a href="https://vite.dev">React + Vite</a></dt><dd>For an interactive site when you already know React. <em>Start:</em> <code>npm create vite@latest</code></dd></div>
+        <div><dt><a href="https://gohugo.io">Hugo</a> / <a href="https://jekyllrb.com">Jekyll</a></dt><dd>For a blog that's mostly writing. GitHub Pages builds Jekyll sites for you; Hugo builds very quickly. <em>Start:</em> fork a theme from step 2.</dd></div>
+      </dl>
+      <p class="note">The Astro, Next.js and Vite commands need <a href="https://nodejs.org">Node.js</a> installed on your laptop. Plain HTML doesn't need anything.</p>
+    </section>
+
+    <section id="template" aria-labelledby="template-title">
+      <h2 id="template-title">2. Start from a template</h2>
+      <p>A template is a finished site that you copy and fill with your own content. These steps use a plain HTML starter made for this workshop. The same buttons work for every template listed at the end of this section.</p>
 
       <ol class="steps">
         <li class="step">
@@ -62,7 +77,26 @@
             <figcaption>1: the name, with your own username. 2: <strong>Public</strong>. 3: <strong>Create repository</strong>. Any other name works too; your site will just live at <code>username.github.io/that-name/</code>.</figcaption>
           </figure>
         </li>
+      </ol>
 
+      <h3>Other templates</h3>
+      <p>Open one, then click <strong>Use this template</strong> (or <strong>Fork</strong> if there's no template button). Each README explains how to set it up.</p>
+      <ul class="templates">
+        <li><a href="https://github.com/roy-elia/portfolio-starter">portfolio-starter</a> <span><b>Plain HTML</b> one page, the starter above</span></li>
+        <li><a href="https://github.com/RyanFitzgerald/devportfolio">devportfolio</a> <span><b>Astro</b> one-page developer CV</span></li>
+        <li><a href="https://github.com/satnaing/astro-paper">AstroPaper</a> <span><b>Astro</b> minimal blog</span></li>
+        <li><a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a> <span><b>Jekyll</b> research site, runs on GitHub Pages as is</span></li>
+        <li><a href="https://github.com/alshedivat/al-folio">al-folio</a> <span><b>Jekyll</b> research site with a publications list</span></li>
+        <li><a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> <span><b>Hugo</b> fast blog theme</span></li>
+      </ul>
+      <p class="note">All of these are MIT licensed: change anything you like, and keep the <code>LICENSE</code> file.</p>
+    </section>
+
+    <section id="deploy" aria-labelledby="deploy-title">
+      <h2 id="deploy-title">3. Deploy it for free</h2>
+      <p>The starter is a static site: a folder of HTML, CSS and image files that the host sends to visitors as they are. There's no server for you to run, which is why hosting it costs nothing.</p>
+
+      <ol class="steps">
         <li class="step">
           <h3>Turn on GitHub Pages</h3>
           <p>In your new repo, open <strong>Settings</strong>, then <strong>Pages</strong> in the left sidebar. Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <em>Deploy from a branch</em>, choose <code>main</code> and <code>/ (root)</code>, and click <strong>Save</strong>.</p>
@@ -84,7 +118,7 @@
         <li class="step">
           <h3>Make it yours</h3>
           <p>In your repo, click <code>index.html</code>, then the pencil icon (<strong>Edit this file</strong>) at the top right of the file. Change everything next to a ✏️ comment: your name, intro, links, projects and the <em>Right now</em> list. Colours live at the top of <code>style.css</code>.</p>
-          <p>To save: click <strong>Commit changes…</strong>, write a short message like <em>add my projects</em>, and confirm. Your live site updates about a minute later.</p>
+          <p>To save: click <strong>Commit changes…</strong>, write a short message like <em>add my projects</em>, and confirm. Your live site updates about a minute later. Every commit redeploys the site.</p>
           <figure>
             <a href="img/step5-edit.png" title="Open full size"><img src="img/step5-edit.png" alt="GitHub's file editor: 1, a pencil comment above the title line; 2, the Commit changes button" loading="lazy" width="800" height="410"></a>
             <figcaption>1: a ✏️ comment and the line it points to. 2: <strong>Commit changes…</strong>. Want a full editor? Press <kbd>.</kbd> on your repo for github.dev, or clone it and use VS Code with <code>git add</code>, <code>git commit</code>, <code>git push</code>.</figcaption>
@@ -98,17 +132,25 @@
       </ol>
 
       <p class="done">That's it: you have a real website. Raise your hand if anything got stuck, and sign up for the demo showcase at 8:30 if you want to show it off.</p>
+
+      <h3>Prefer Vercel or Netlify?</h3>
+      <p>Both are free for personal sites and deploy straight from your GitHub repo. Every push to <code>main</code> updates the site.</p>
+      <dl class="table">
+        <div><dt><a href="https://vercel.com">Vercel</a></dt><dd>Sign up with GitHub, click <strong>Add New → Project</strong>, import your repo, and click <strong>Deploy</strong>. Your site lives at <code>project-name.vercel.app</code>. The best fit for Next.js, and each branch gets its own preview link. Personal, non-commercial use only on the free plan.</dd></div>
+        <div><dt><a href="https://www.netlify.com">Netlify</a></dt><dd>Sign up with GitHub, choose <strong>Add new project → Import an existing project</strong>, pick your repo, and deploy. Your site lives at <code>name.netlify.app</code>. No repo? Drag a folder onto <a href="https://app.netlify.com/drop">app.netlify.com/drop</a>. The free plan's monthly credits cover roughly 20 deploys.</dd></div>
+      </dl>
     </section>
 
+
     <section id="domain" aria-labelledby="domain-title">
-      <h2 id="domain-title">Get yourname.com (or .me, or .tech)</h2>
-      <p>With the Student Developer Pack you can claim a domain free for a year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
+      <h2 id="domain-title">4. Add a custom domain</h2>
+      <p>A domain is the address people type, like <code>yourname.me</code>. Without one, your site lives at <code>username.github.io</code>. With the Student Developer Pack you can claim one free for a year. Current offers on the <a href="https://education.github.com/pack">pack page</a>:</p>
       <ul>
         <li><strong>Namecheap</strong>: a free <code>.me</code> domain for one year.</li>
         <li><strong>.TECH</strong>: one <code>.tech</code> domain free for one year.</li>
         <li><strong>Name.com</strong>: a free domain from 25+ endings like <code>.live</code> and <code>.studio</code>.</li>
       </ul>
-      <p>Then point it at your site:</p>
+      <p>Once your pack is approved, open the offer on the pack page and claim your domain on the partner's site. Then point it at your site:</p>
       <ol class="sub">
         <li>In your repo: <strong>Settings → Pages → Custom domain</strong>, type your domain, and click <strong>Save</strong>. Do this before touching DNS.</li>
         <li>At your registrar, add four <strong>A records</strong> for the bare domain:
@@ -123,50 +165,34 @@
       <p class="note">Full details: <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">GitHub's custom domain docs</a>.</p>
     </section>
 
-    <section aria-labelledby="stack-title">
-      <h2 id="stack-title">Want a framework instead?</h2>
-      <p>Plain HTML is a great first site. If you want more, here's when each option makes sense:</p>
-      <dl class="table">
-        <div><dt>Plain HTML/CSS</dt><dd>One page, first site, nothing to install. What you just used.</dd></div>
-        <div><dt><a href="https://astro.build">Astro</a></dt><dd>The best default for portfolios and blogs. Write pages in Markdown, ships almost no JavaScript.</dd></div>
-        <div><dt><a href="https://nextjs.org">Next.js</a></dt><dd>If you want React plus a backend (forms, logins, APIs). Overkill for a static portfolio.</dd></div>
-        <div><dt><a href="https://vite.dev">React + Vite</a></dt><dd>An interactive single-page site when you already know React.</dd></div>
-        <div><dt><a href="https://gohugo.io">Hugo</a> / <a href="https://jekyllrb.com">Jekyll</a></dt><dd>Static site generators for blogs. Jekyll is built into GitHub Pages; Hugo is a single, very fast binary.</dd></div>
-      </dl>
+    <section id="level" aria-labelledby="level-title">
+      <h2 id="level-title">5. Level up your website</h2>
+      <p>Optional ideas for later, once your site is live. Each one links to the docs you'll need.</p>
 
-      <h3>Templates worth forking</h3>
-      <ul class="templates">
-        <li><a href="https://github.com/RyanFitzgerald/devportfolio">devportfolio</a> <span><b>Astro</b> simple one-page developer CV</span></li>
-        <li><a href="https://github.com/satnaing/astro-paper">AstroPaper</a> <span><b>Astro</b> minimal, accessible blog</span></li>
-        <li><a href="https://github.com/chrismwilliams/astro-theme-cactus">Astro Cactus</a> <span><b>Astro + Tailwind</b> blog and portfolio</span></li>
-        <li><a href="https://github.com/academicpages/academicpages.github.io">Academic Pages</a> <span><b>Jekyll</b> fork, rename, live on Pages</span></li>
-        <li><a href="https://github.com/alshedivat/al-folio">al-folio</a> <span><b>Jekyll</b> research sites with publications</span></li>
-        <li><a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a> <span><b>Hugo</b> fast, clean blog theme</span></li>
-      </ul>
-      <p class="note">All MIT licensed. Fork it, change the content, keep the license file.</p>
-    </section>
+      <h3>Add a blog</h3>
+      <p>A blog gives people a reason to come back and shows how you think about your work. The easiest route is Astro's blog template: run <code>npm create astro@latest -- --template blog</code>, then write each post as a Markdown file in <code>src/content/blog/</code>. Astro turns every file into a page. To publish it on GitHub Pages, follow <a href="https://docs.astro.build/en/guides/deploy/github/">Astro's GitHub Pages guide</a>.</p>
 
-    <section aria-labelledby="hosts-title">
-      <h2 id="hosts-title">Other free places to host</h2>
-      <dl class="table">
-        <div><dt><a href="https://pages.github.com">GitHub Pages</a></dt><dd>Free with a public repo. Up to 1 GB per site. Personal, non-commercial sites.</dd></div>
-        <div><dt><a href="https://vercel.com">Vercel</a></dt><dd>Free Hobby plan for personal projects. Import a GitHub repo and every push deploys, with a preview link for each branch. Best for Next.js.</dd></div>
-        <div><dt><a href="https://www.netlify.com">Netlify</a></dt><dd>Free plan with monthly credits (roughly 20 production deploys a month). Drag-and-drop a folder to deploy.</dd></div>
-      </dl>
-    </section>
+      <h3>Dark mode</h3>
+      <p>Your site switches to dark colours when the visitor's phone or laptop is set to dark mode. The starter already does this: look for <code>@media (prefers-color-scheme: dark)</code> in <code>style.css</code> and change the colours inside it.</p>
 
-    <section aria-labelledby="level-title">
-      <h2 id="level-title">Level up later</h2>
-      <ul>
-        <li><strong>A blog in Markdown:</strong> move to Astro and use <a href="https://docs.astro.build/en/guides/content-collections/">content collections</a>.</li>
-        <li><strong>Dark mode:</strong> already in your starter. Look for <code>prefers-color-scheme</code> in <code>style.css</code>.</li>
-        <li><strong>See who visits:</strong> <a href="https://www.goatcounter.com">GoatCounter</a> is free and cookie-free. Paste one script tag.</li>
-        <li><strong>Notion as your CMS:</strong> write in Notion and pull pages in at build time with the <a href="https://developers.notion.com">Notion API</a> and <a href="https://github.com/souvikinator/notion-to-md">notion-to-md</a>.</li>
-      </ul>
+      <h3>Visitor counts</h3>
+      <p>Find out how many people visit and where they came from, for example after you put your link on your résumé. <a href="https://www.goatcounter.com">GoatCounter</a> is free for personal sites and uses no cookies, so you don't need a cookie banner. Sign up, pick a code, and paste this line just before <code>&lt;/body&gt;</code> in <code>index.html</code>, with your code in place of <code>YOURCODE</code>:</p>
+      <code class="block">&lt;script data-goatcounter="https://YOURCODE.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"&gt;&lt;/script&gt;</code>
+
+      <h3>Notion as your CMS</h3>
+      <p>A CMS (content management system) is the place where you write and edit your site's content. With Notion as your CMS, you write posts in a Notion database and a script copies them onto your site, so you can update the site without touching code. This one needs some coding to set up:</p>
+      <ol class="sub">
+        <li>Make a Notion database for your posts, with columns like title, date and published.</li>
+        <li>Create an internal integration at <a href="https://www.notion.so/profile/integrations">notion.so/profile/integrations</a> and copy its secret. Keep the secret out of your repo.</li>
+        <li>Open the database in Notion and add the integration under <strong>Connections</strong>, so it can read the pages.</li>
+        <li>In an Astro or Next.js site, use the <a href="https://developers.notion.com">Notion API</a> to fetch the posts and <a href="https://github.com/souvikinator/notion-to-md">notion-to-md</a> to turn each one into Markdown when the site builds.</li>
+        <li>Rebuild the site whenever you publish a post. A scheduled GitHub Action can do it for you, with the secret saved under <strong>Settings → Secrets and variables → Actions</strong>.</li>
+      </ol>
     </section>
 
     <section class="help" aria-labelledby="help-title">
-      <h2 id="help-title">Stuck after tonight?</h2>
+      <h2 id="help-title">Stuck?</h2>
       <p>Ask in the <a href="https://discord.gg/hfzjN7n3jP">CSUS Discord</a>, drop by the CSUS Helpdesk in Trottier 3090 (weekdays 11–5 during term), or find us on Instagram at <a href="https://instagram.com/mcgillcsus">@mcgillcsus</a>.</p>
     </section>
   </main>
